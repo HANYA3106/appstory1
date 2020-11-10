@@ -1,0 +1,40 @@
+<video  loop autoplay >
+  <source src="/videos/appstory-video1.mp4",type="video/mp4"/> 
+</video>
+  <div class="box-new">
+    <%= link_to image_tag("appstory-color.png", class:"second-fotter-logo"), "/" %>
+    <div class="box-inner">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+        <h1>新規登録</h1>
+        <div class="field-new">
+          <%= f.label :nickname %><br />
+          <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname", class:"field-place" %>
+        </div>
+        
+        <div class="field-new">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"field-place" %>
+        </div>
+
+        <div class="field-new">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %>文字以上)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "new-password", class:"field-place" %>
+        </div>
+
+        <div class="field-new">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"field-place"%>
+        </div>
+        <div class="field-new">
+          <div class="actions">
+            <%= f.submit "登録する", class: "radius" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>  
+

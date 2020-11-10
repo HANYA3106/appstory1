@@ -1,0 +1,38 @@
+<div class="user-show-page">
+  <div class="appstory-logo-user">
+    <div class="user-logo">
+      <%= link_to image_tag("appstory-radius.png", size:'150x150'), "/",  class:"user-show-image"%>
+    </div>
+    <div class="user-nickname-plate">
+      <h2>
+        <%= @nickname %><br><span>の作品</span>
+      </h2>
+    </div>
+  </div>
+  <div class="user-room">
+    <ul class="user-room-lists" >
+      <% @stories.each do |story| %>
+        <li class="postit" >
+          <%= link_to story_path(story.id), method: :get do %>
+            <div class="tape"></div>
+            <div class="user-story-info">
+              <h3 class="user-story-tittle">
+                <span>
+                  <%= @subject[(story.subject_id)-1].content %><br>
+                  <%= @purpose[(story.purpose_id)-1].content %><br>
+                  <%= @tale[(story.tale_id)-1].content %>
+                </span>
+              </h3>
+              <div class="user-star">
+                <%= image_tag "star.png", class:"star-icon" %>
+                <span class='star-count'>
+                  <%= story.liked_users.count  %>
+                </span>
+              </div>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

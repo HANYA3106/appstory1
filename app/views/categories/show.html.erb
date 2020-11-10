@@ -1,0 +1,38 @@
+<%= render partial: "shared/header" %>
+<div class="category-page">
+  <div class="category-top" id="genreColor">
+    <%= @genre %>
+  </div>
+  <div class="category-main">
+    <div class="category-story">
+      <ul class="category-genres" >
+        <% @stories.each do |story| %>
+          <li class="category-window" >
+            <%= link_to story_path(story.id), method: :get do %>
+              <div class="category-story-info">
+                <h3 class="category-story-tittle">
+                  <span>
+                    <%= @subject[(story.subject_id)-1].content %><br>
+                    <%= @purpose[(story.purpose_id)-1].content %><br>
+                    <%= @tale[(story.tale_id)-1].content %>
+                  </span>
+                </h3>
+                <div class="user-star">
+                  <%= image_tag "star.png", class:"star-icon" %>
+                  <span class='star-count'>
+                    <%= story.liked_users.count  %>
+                  </span>
+                </div>
+              </div>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+<footer class="category-footer">
+  <div class='category-contents'>
+    <%= link_to image_tag("appstory.png", class:"appstory-footer-icon", size:"240x80"), "/" %>
+  </div>
+</footer>

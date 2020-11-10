@@ -1,0 +1,250 @@
+.show_-tory {
+  width: 100vw;
+  background-color: rgb(240, 240, 240);
+}
+
+.show-story-top {
+  width: 100%;
+  height: 400px;
+  background-image: image-url('appstory-header-2.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+.show-story-main {
+  width: 100%;
+  height: 125px;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 50px 0;
+  position: relative;
+}
+
+.name {
+  font-size: 28px;
+  padding-top: 30px; 
+  color: #000;
+}
+
+.name span {
+  color: crimson;
+  font-size: 32px;
+  
+}
+
+.show-name {
+  color: #000;
+  &:hover {
+    color: cyan;
+  }
+}
+
+.show-star {
+  width: 230px;
+  position: absolute;
+  left: 30%;
+  bottom: 10%;
+  display: flex;
+
+}
+.show-like {
+  width: 200px;
+  position: absolute;
+  left: 30%;
+  bottom: 10%;
+  display: flex;
+  font-size: 23px;
+}
+
+.show-like h3 {
+  margin-right: 10%;
+}
+
+
+
+.show-star-btn {
+  cursor: pointer;
+  border: none;
+  background-color: rgb(255, 166, 65);
+  margin-right: 8px;
+  display: block;
+  border-radius: 48%;
+  padding: 20px 20px 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f1e767), to(#feb645));
+  background: -webkit-linear-gradient(top, #f1e767 0%, #feb645 80%);
+  background: linear-gradient(to bottom, #f1e767 0%, #feb645 80%);
+}
+
+.show-star-btn:hover {
+  background: -webkit-gradient(linear, left bottom, left top, from(#f1e767), to(#feb645));
+  background: -webkit-linear-gradient(bottom, #f1e767 0%, #feb645 60%);
+  background: linear-gradient(to top, #f1e767 0%, #feb645 60%);
+}
+
+#show-btn {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.more-list {
+  display: flex;
+  justify-content: flex-end;
+  margin: 30px 30px 0;
+}
+
+.btn {
+  overflow: hidden;
+  padding: 1.5em 4.8em;
+  color: #fff;
+  border-radius: 0;
+  background: #000;
+  position: relative;
+  margin-left: 30px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.btn-edit:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 35%;
+  height: 100%;
+  content: '';
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
+  background:#fff100;
+}
+
+.btn-destroy:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 35%;
+  height: 100%;
+  content: '';
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
+  background:#2bff00;
+}
+
+.btn-edit:hover:before {
+  -webkit-transform: translateX(200%);
+  transform: translateX(200%);
+}
+
+.btn-destroy:hover:before {
+  -webkit-transform: translateX(200%);
+  transform: translateX(200%);
+}
+
+.show-story-box {
+  width: 100vw;
+  height: 80vh;
+  background-image: image-url('blue.png');
+  padding: 2% 3%;
+}
+
+.story-text {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffffe7;
+  padding: 15px 20px;
+  font-size: 23px;
+  overflow: scroll;
+}
+
+.comment-box {
+  width: 70vw;
+  background-color: #fff;
+  margin: 5vh 13%;
+}
+
+.show-comment {
+  text-align: center;
+}
+
+.comment-text {
+  width: 100%;
+  height: 120px;
+  padding: 10px;
+  border: solid 2px #dedede;
+  resize: none;
+}
+
+.comment-warn {
+  padding: 3px 10px;
+  font-size: 14px;
+  margin: 10px 0px;
+  text-align: left;
+}
+
+.comment-btn {
+  display: inline-block;
+  line-height: 48px;
+  background-color: #41dee4;
+  // border: 1px solid #3CCACE;
+  color: #fff;
+  width: 25%;
+  min-width: 150px;
+  font-size: 18px;
+  border-radius: 100px;
+  margin-bottom: 3vh;
+  text-align: center;
+  cursor: pointer;
+  
+}
+
+.comment-form {
+  border: 1px solid #41dee4;
+  background-color: #41dee4;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  
+}
+
+// .comment-flag {
+//   display: flex;
+//   justify-content: center;
+// }
+
+// .comment-flag-icon {
+//   margin: 10px 5px 0 0;
+// }
+
+
+.comment-icon {
+  margin-top: 15px;
+  font-size: 23px;
+}
+
+  .comments {
+  padding: 5px;
+  margin-top: 5px;
+  font-family: arial,sans-serif;
+  font-size: 17px;
+  border:2px solid #979797;
+  border-radius: 20px;
+  height: 300px;
+  overflow: scroll;
+}
+
+.comment-user{
+  color: #2ea9d6;
+  padding-left: 5px;
+}
+.comment-user span{
+  color: #2d2d2d;
+}
+
+.story_footer {
+  width: 100%;
+  height: 30%;
+  text-align: center;
+}

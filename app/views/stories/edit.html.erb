@@ -1,0 +1,20 @@
+<%= render "shared/header" %>
+
+<div class="edit-story">
+  <div class="edit-main">
+    <%= form_with(model: @story, local: true) do |form| %>
+      <div class="edit-story-top">
+        <h3>編集する</h3>
+      </div>
+      <div class="edit-story-box">
+          <%= form.text_area :text, cols:"48", rows:"600", maxlength:"28800",class:"story-text edit-text" %>
+      </div>
+      <div class="edit-btn">
+        <%= form.submit "投稿する", class:"edit-btn-submit" %>
+      </div>
+    <% end %>
+  </div>
+  <footer class="story_footer">
+    <%= link_to image_tag("appstory.png", size:'280x80'), "/"   %>
+  </footer>
+</div>

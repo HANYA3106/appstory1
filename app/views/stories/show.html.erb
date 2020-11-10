@@ -1,0 +1,84 @@
+<%= render "shared/header"%>
+
+<div class="show-story">
+  <div class="show-story-top">
+  </div>
+    <div class="show-story-main">
+      <h3 class="name">
+        <span>投稿者</span>:
+        <a href="/users/<%= @story.user.id %>" class="show-name">
+          <%= @story.user.nickname %>
+        </a>
+      </h3>
+      <div class="show-star">
+        <% if current_user.already_liked?(@story) %>
+          <button class='show-star-btn'>
+            <%= image_tag "star.png", class:"show-star-icon", size:"17x17" %>
+            <%= button_to "", story_like_path(@story), method: :delete , id:"show-btn" %>
+          </button>
+        <% else %>
+          <button class='show-star-btn'>
+            <%= image_tag "star.png", class:"show-star-icon", size:"17x17" %>
+          <%= button_to "", story_likes_path(@story) , id:"show-btn" %>
+          </button>
+        <% end %>
+        <div class="show-like">
+          <h3>お気に入り : </h3>
+          <%= @story.likes.count %>
+        </div>
+      </div>
+      <% if user_signed_in? && current_user.id == @story.user_id %>
+        <ul class="more-list">
+          <li>
+            <%= link_to '編集', edit_story_path(@story.id), method: :get ,class:"btn btn-edit" %>
+          </li>
+          <li>
+            <%= link_to '削除', story_path(@story.id), method: :delete, class:"btn btn-destroy" %>
+          </li>
+        </ul>
+      <% end %>
+    </div>
+    <div class="show-story-box">
+      <div class="story-text">
+        <%= @story.text %>
+      </div>
+    </div>
+  </div>
+  <div class="comment-box">
+    <div class="show-comment">
+      <% if current_user %>
+        <%= form_with(model: [@story, @comment],local: true) do |form| %>
+        <%# <%= form. %>
+          <%= form.text_area :text, class: "comment-text" %>
+          <p class="comment-warn">
+            相手のことを考え丁寧なコメントを心がけましょう。
+            <br>
+            不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          </p>
+          <div class= "comment-btn">
+            <%# <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%> 
+            <%= form.submit "コメントする", class: "comment-form"%>
+          </div>
+        <% end %>
+      <% else %>
+        <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p>
+        </strong>
+      <% end %>
+    </div>
+    <div class="comment-icon">
+      <%# <i class="fas fa-comments"></i> %>
+        コメント一覧
+    </div>
+    <div class="comments" id='comments'>
+        <% @comments.reverse_each do |comment| %>
+          <p>
+            <strong class="comment-user"><%= comment.user.nickname %><span>：</span></strong>
+            <%= comment.text %>
+          </p>
+        <% end %>
+    </div>
+  </div>
+  <footer class="story_footer">
+    <%= link_to image_tag("appstory.png", size:"280x80"), "/"   %>
+  </footer>
+</div>

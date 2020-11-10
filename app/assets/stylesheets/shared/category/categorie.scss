@@ -1,0 +1,71 @@
+.category-page {
+  background-image: image-url("tape.png");
+  border-top: none;
+  width: 100vw;
+  height: 180vh;
+  opacity: 0.9;
+}
+
+.category-top {
+  color: rgb(255, 255, 255);
+  font-size: 7.3em;
+  font-weight: 900;
+  text-shadow: 1px 3px 2px #000;
+  padding-top: 3%;
+  padding-left: 10%;
+}
+
+.category-story {
+  margin: 3% auto;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: scroll;
+}
+
+.category-genres {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 3% 3%;
+}
+
+.category-window {
+  width: 16%;
+  height: 33%;
+  min-width: 15%;
+  padding: 18px 12px;
+  margin: 0 2% 3%;
+  display: inline-block;
+  position: relative;
+  border-radius: 10px;
+  background-color:#ece9d5;
+  color:#908a60;
+}
+
+.category-window:hover {
+  box-shadow: 4px 5px 1px #000;
+
+}
+
+.category-info {
+  padding: 1vw;
+}
+
+.category-story-tittle {
+  color: black;
+  font-size: 2.6vh;
+  font-weight: 900;
+  margin-bottom: 5px;
+  
+}
+
+.category-footer {
+  position: relative;
+}
+
+.category-contents {
+  position: absolute;
+  right: 3%;
+}

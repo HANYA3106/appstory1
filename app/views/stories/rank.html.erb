@@ -1,0 +1,43 @@
+<%= render "shared/header" %>
+
+<div class="rank-main">
+  <div class="rank-story">
+    <ul class="rank-lists">
+      <% @ranks.each.with_index(1) do |rank, i| %>
+        <li class="rank-list">
+          <div class="book-rank-name">
+              <h2>第<span><%= i %></span>位</h2>
+          </div>
+          <%= link_to story_path(rank.id), method: :get do %>
+            <div class="book-img-content">
+              <%= image_tag @category[(rank.category_id)-1].image.url, class: "book-img" %>
+            </div>
+            <div class="rank-info">
+              <h3 class="story-name">
+                <span>
+                  <%= @subject[(rank.subject_id)-1].content %><br>
+                  <%= @purpose[(rank.purpose_id)-1].content %><br>
+                  <%= @tale[(rank.tale_id)-1].content %>
+                </span>
+              </h3>
+              <div class="rank-nickname">
+                <p>
+                  <%= rank.user.nickname %>
+                </p>
+              </div>
+              <div class="rank-btn">
+                <%= image_tag "star.png", class:"star-icon" %>
+                <span class="star-count">
+                  <%= rank.liked_users.count  %>
+                </span>
+              </div>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <footer class="rank-footer">
+    <%= image_tag "appstory-logo3.png" %>
+  </footer>
+</div>

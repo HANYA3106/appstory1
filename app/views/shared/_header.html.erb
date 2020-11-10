@@ -1,0 +1,45 @@
+<header class='top-page-header'>
+  <div class='search-bar-contents'>
+    <%= link_to image_tag("appstory-color.png", class:"app-story-icon"), "/" %>
+  </div>
+  <div class='nav'>
+    <ul class='lists-left'>
+      <li class="category-book-list list-color" id="lists">カテゴリー</li>
+      <li><%= link_to '人気', rank_stories_path, class: "brand-list" %></li>
+    </ul>
+    <ul class="category-lists hidden" id="pull-down">
+        <li class="pull-down-list">
+          <%= link_to "いい話","/categories/1",id:"pull-down-color" %>
+        </li>
+        <li class="pull-down-list">
+          <%= link_to "恋の話","/categories/2",id:"pull-down-color" %>
+        </li>
+        <li class="pull-down-list">
+          <%= link_to "泣ける話","/categories/3",id:"pull-down-color" %>
+        </li>
+        <li class="pull-down-list">
+          <%= link_to "不思議な話","/categories/4",id:"pull-down-color" %>
+        </li>
+        <li class="pull-down-list">
+          <%= link_to "怖い話","/categories/5",id:"pull-down-color" %>
+        </li>
+        <li class="pull-down-list">
+          <%= link_to "笑い話","/categories/6",id:"pull-down-color" %>
+        </li>
+        <li class="pull-down-list">
+          <%= link_to "スッキリ話","/categories/7",id:"pull-down-color" %>
+        </li>
+      </ul>
+    <ul class='lists-right'>
+      
+      <% if user_signed_in? %>
+        <li class="list-color"><%= link_to current_user.nickname, "/users/#{current_user.id}", class: "user-nickname" %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+      <% else %>
+        <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+        <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+      <% end %>
+
+    </ul>
+  </div>
+</header>

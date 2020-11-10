@@ -1,0 +1,166 @@
+<%= render "shared/header" %>
+<div class="main">
+
+  <%# 画面上部の「多くの物語に出会えるアプリ」帯部分 %>
+  <div class="title-contents">
+    <h2 class="service-title">
+      多くの物語に出会えるアプリ
+    </h2>
+    <p class="service-explain">
+      AppSTORYはだれでもかんたんに作る・読む事ができる
+    </p>
+    <p class="service-explain">
+      アプリです
+    </p>
+    <%# <div class="store-btn">
+      <%= link_to image_tag("https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2011-09-21&kind=iossoftware&bubble=ios_apps", class:"apple-btn"), "#" %>
+      <%# <%= link_to image_tag("dl-android.png", class:"google-btn"), "#" %>
+    <%# </div> %> 
+  </div>
+
+  <%# AppSTORYが選ばれる3つの理由部分 %>
+  <div class="select-reason-contents">
+    <h2 class="title">
+      AppSTORYが選ばれる3つの理由
+    </h2>
+    <ul class="reason-lists">
+      <li class="list">
+        <%= image_tag "appstory-icon-1.png", class:"list-pict" %>
+        <span class="reason-list-number">1</span>
+        <h3 class="reason-list-text">
+          <span class="reason-list-blue-text">ちょっとの時間</span>
+          で<br>すぐ読める
+        </h3>
+        <p class="reason-list-description">
+          待ち時間や、気分転換に<br>使えます！
+        </p>
+      </li>
+      <li class="list">
+        <%= image_tag "appstory-icon-2.png", class:"list-pict" %>
+        <span class="reason-list-number">2</span>
+        <h3 class="reason-list-text">
+          <span class="reason-list-blue-text">気軽に</span>
+          物語が<br>作れちゃう！
+        </h3>
+        <p class="reason-list-description">
+          出されたお題を使って<br>執筆へ
+        </p>
+      </li>
+      <li class="list">
+        <%= image_tag "appstory-icon-3.png", class:"list-pict" %>
+        <span class="reason-list-number">3</span>
+        <h3 class="reason-list-text">
+          <span class="reason-list-blue-text">イイね</span>
+          を貰って<br>嬉しい気分に！
+        </h3>
+        <p class="reason-list-description">
+          気に入った作品などは<br>
+          <span class="reason-list-blue-text">シェア</span>
+          して多くの人に読んでもらえたら最高だね
+        </p>
+      </li>
+    </ul>
+  </div>
+  <%# //AppSTORYが選ばれる3つの理由部分 %>
+
+
+  <%# 人気作品一覧 %>
+  <div class="story-contents">
+    <h2 class="title">ピックアップカテゴリー</h2>
+    <%= link_to "新規投稿作品", "stories/new", class: "subtitle" %>
+    <ul class="book-lists">
+      <% @stories.each do |story| %>
+        <li class="books">
+          <%= link_to story_path(story.id), method: :get do %>
+            <div class="book-img-content">
+              <%= image_tag @category[(story.category_id)-1].image.url, class: "book-img" %>
+            </div>
+            <div class="story-info">
+              <h3 class="story-name">
+                <span>
+                  <%= @subject[(story.subject_id)-1].content %><br>
+                  <%= @purpose[(story.purpose_id)-1].content %><br>
+                  <%= @tale[(story.tale_id)-1].content %>
+                </span>
+              </h3>
+              <div class="story-nickname">
+                <p>
+                  <%= story.user.nickname %>
+                </p>
+              </div>
+              <div class="star-btn">
+                <%= image_tag "star.png", class:"star-icon" %>
+                <span class="star-count">
+                  <%= story.liked_users.count  %>
+                </span>
+              </div>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+      
+      <% if @stories.blank? %>
+        <li class="sample-books">
+          <%= link_to '#' do %>
+            <%= image_tag "appstory-icon4", class: "sample-img" %>
+            <div class="sample-book-info">
+              <h3 class="sample-book-name">
+                作品を出版してね！
+              </h3>
+              <div class="sample-star-btn">
+                <%= image_tag "star.png", class:"star-icon" %>
+                <span class="star-count">0</span>
+              </div>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <%# //人気作品一覧 %>
+  <div class="book-ranking">
+    <%= link_to '人気ランキング', "stories/new", class: "rankings" %>
+    <ul class="rank-book-lists">
+      <% @ranks.each.with_index(1) do |story, i| %>
+        <li class="rank-books">
+          <div class="book-rank-name">
+            <h2>第<span><%= i %></span>位</h2>
+          </div>
+          <%= link_to story_path(story.id), method: :get do %>
+            <div class="book-img-content">
+              <%= image_tag @category[(story.category_id)-1].image.url, class: "book-img" %>
+            </div>
+            <div class="story-info">
+              <h3 class="story-name">
+                <span>
+                  <%= @subject[(story.subject_id)-1].content %><br>
+                  <%= @purpose[(story.purpose_id)-1].content %><br>
+                  <%= @tale[(story.tale_id)-1].content %>
+                </span>
+              </h3>
+              <div class="story-rank-nickname">
+                <p>
+                  <%= story.user.nickname %>
+                </p>
+              </div>
+              <div class="rank-star-btn">
+                <%= image_tag "star.png", class:"star-icon" %>
+                <span class="star-count">
+                  <%= story.liked_users.count  %>
+                </span>
+              </div>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<% if user_signed_in? %>
+<div class="purchase-btn">
+  <a href="stories/new">
+    <%= image_tag "book-color3.png" , size: '550x80' ,class: "purchase-btn-icon" %>
+  </a>
+</div>
+<% end %>
+<%= render "shared/footer" %>

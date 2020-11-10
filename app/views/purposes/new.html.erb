@@ -1,0 +1,17 @@
+<div class="create-page">
+  <div class="user-logo">
+    <%= link_to image_tag("appstory-radius.png", size:'150x150'), "/",  class:"user-show-image"%>
+  </div>
+  <div class="create-main">
+    <h1>新規投稿ページ</h1>
+    <p>(例：友達が...)</p>
+    <%= form_with url: "/purposes", method: :post, local: true do |form| %>
+      <input type="text" class="create-text"  name="content" size="50x10">
+      <div class="create-submit">
+        <button type="submit" class="create-button">
+          投稿する
+        </button>
+      </div>
+    <% end %>
+  </div>
+</div>

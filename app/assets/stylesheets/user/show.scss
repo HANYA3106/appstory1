@@ -1,0 +1,136 @@
+.user-show-page {
+  background-image: image-url("furniture.jpg");
+}
+//header
+.appstory-logo-user {
+  width: 100vw;
+  background-image: image-url("furniture.jpg");
+  padding-top: 20px;
+  padding-left: 30px;
+  padding-right: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-logo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 5px #000;
+}
+
+.user-show-image:hover {
+  cursor: pointer;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Limelight);
+
+.user-nickname-plate {
+  width:250px;
+  height: 130px;
+  color: #fff;
+  font-family: 'Limelight', cursive;
+  font-size: 35px;
+  padding: 20px 18px 0;
+  border-radius:10px;
+  border:4px solid rgba(225,225,225,0);
+  position:relative;
+  background: rgb(156, 77, 21);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgb(156, 77, 21)), to(rgb(207, 114, 48)));
+  background: -webkit-linear-gradient(top, rgb(156, 77, 21) 0%, rgb(207, 114, 48)60%);
+  background: linear-gradient(to bottom, rgb(156, 77, 21) 0%, rgb(207, 114, 48)60%);
+  box-shadow: inset 0 0 0 3px rgba(85,46,12,0.7), 0px 5px 5px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.user-nickname-plate:before,
+.user-nickname-plate:after{
+  content:"";
+  width:4px;
+  height:50px;
+  position:absolute;
+  top:-35px;
+  box-shadow:inset 0px -1px 1px rgba(0, 0, 0, 0.5),0 0 5px rgba(0, 0, 0, 0.5);
+  background:#DBA560;
+  background:-webkit-linear-gradient(left top, #DBA560, #DBA560 45%,#AA7430 50% , #AA7430 55% , #DBA560 60% , #DBA560 100% );
+  background:linear-gradient(left top, #DBA560, #DBA560 45%,#AA7430 50% , #AA7430 55% , #DBA560 60% , #DBA560 100% );
+  background-size:10px 10px;
+}
+.user-nickname-plate:before{
+  left:13px;
+}
+.user-nickname-plate:after{
+  right:13px;
+}
+
+.user-nickname-plate span {
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+  font-size: 20px;
+}
+//headerの終わり
+
+//作品集
+.user-room {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.user-room-lists {
+  width: 100%;
+  height: 100%;
+  margin: 0 5%;
+  padding: 2% 0;
+  overflow: scroll;
+}
+
+.tape{
+  border-left:2px dotted rgba(0,0,0,0.1);
+  border-right:2px dotted rgba(0,0,0,0.1);
+  box-shadow:0 0 5px rgba(0,0,0,0.2);
+  width:85px;
+  height:28px;
+  position:absolute;
+  top:-13px;
+  left:36%;
+  // -webkit-transform:rotate(-8deg);
+}
+
+/* ポストイット */
+.postit {
+  width: 20%;
+  height: 220px;
+  min-width: 15%;
+  padding: 10px 10px;
+  margin: 2% 2% 3%;
+  display: inline-block;
+  position: relative;
+  border-bottom:1px dotted #908a60;
+  background-color:#ece9d5;
+  color:#908a60;
+  -moz-box-shadow: 3px 8px 3px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 3px 8px 3px rgba(0, 0, 0, 0.25);
+  box-shadow: 3px 8px 3px rgba(0, 0, 0, 0.25);
+  box-sizing:border-box;
+}
+
+.user-story-info {
+  color: black;
+  padding: 1vw;
+}
+
+.user-story-tittle {
+  font-size: 2.8vh;
+  font-weight: 900;
+  margin-bottom: 5px;
+}
+
+.user-star {
+  position: absolute;
+  right: 8%;
+  bottom: 8%;
+}
+//作品集の終わり

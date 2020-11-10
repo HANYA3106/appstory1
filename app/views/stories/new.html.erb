@@ -1,0 +1,158 @@
+<div class="make＿story">
+
+  <header class="appstory-logo">
+  <%= link_to image_tag("appstory-color.png", size:'470x125'), "/" %>
+
+  </header>
+  <%= form_with model: @story, local: true do |s| %>
+    <%= render 'shared/error_messages', model: s.object %>
+
+    <%# カテゴリー選択 %>
+    <div class="category">
+      <h2><span>カテゴリー</span>を選んで下さい</h2>
+      <div class="select_category">
+        <div class="lists">
+          <div class="icon">
+            <input type="radio" class="list_icon" id="list_icon_01" name="category_id" value="1">
+            <label for="list_icon_01" class="list_label"> 
+                <%= image_tag @category[0].image.url, class:"icon_list" %><br>
+                いい話 
+            </label> 
+          </div>
+          <div class="icon">
+            <input type="radio" class="list_icon" id="list_icon_02" name="category_id" value="2">
+            <label for="list_icon_02" class="list_label">
+              <%= image_tag @category[1].image.url, class:"icon_list"  %><br>
+              恋の話
+            </label>
+          </div>
+          <div class="icon">
+            <input type="radio" class="list_icon" id="list_icon_03" name="category_id" value="3" >
+            <label for="list_icon_03" class="list_label">
+              <%= image_tag @category[2].image.url, class:"icon_list" %><br>
+              泣ける話
+            </label>
+          </div>
+          <div class="icon">
+            <input type="radio" class="list_icon" id="list_icon_04" name="category_id" value="4">
+            <label for="list_icon_04" class="list_label">
+              <%= image_tag @category[3].image.url, class:"icon_list" %><br>
+              不思議な話
+            </label> 
+          </div>
+          <div class="icon">
+            <input type="radio" class="list_icon" id="list_icon_05" name="category_id" value="5">
+            <label for="list_icon_05" class="list_label">
+              <%= image_tag @category[4].image.url, class:"icon_list" %><br>
+              怖い話
+            </label>
+          </div>
+          <div class="icon">
+            <input type="radio" class="list_icon" id="list_icon_06" name="category_id" value="6">
+            <label for="list_icon_06" class="list_label">
+              <%= image_tag @category[5].image.url, class:"icon_list" %><br>
+              笑い話
+            </label> 
+          </div>
+          <div class="icon">
+            <input type="radio" class="list_icon" id="list_icon_07" name="category_id" value="7">
+            <label for="list_icon_07" class="list_label">
+              <%= image_tag @category[6].image.url, class:"icon_list" %><br>
+            スッキリ話
+            </label>
+          </div>
+        </div>  
+      </div>
+    </div>
+      <%# /カテゴリー選択 %>
+      <%# お題作成 %>
+    <div class="story_theme">
+      <button type="button" id="start_button" >
+        お題を作る
+      </button>
+      <div class="story_animation">
+        <div class="story_anime">
+          <h1 class="story_anime_theme">
+            <span class="messages messages-0">
+            </span>
+            <span class="messages messages-1" >
+              <%= @subject.content %>
+            </span>
+            <span class="messages messages-2">
+              <%= @purpose.content %>
+            </span>
+            <span class="messages messages-3" >
+              <%= @tale.content %>
+            </span>
+          </h1>
+        </div>
+        <div class="story_animation_second">
+          <h1 class="story_anime_second" >
+              <%= @subject.content %>
+              <%= @purpose.content %>
+              <%= @tale.content %>
+          </h1>
+        </div>
+          <input type="hidden" name="subject_id" id="subject">
+          <input type="hidden" name="purpose_id" id="purpose">
+          <input type="hidden" name="tale_id" id="tale">
+      </div>
+    </div>
+    <%# /お題作成 %>
+    <%# 話作り %>
+    <div class="story_text">
+      <div class="text_img">
+        <textarea name="text" cols="48" rows="600" maxlength="28800" class="text_form" id="text_form" size="130x26" >
+        </textarea>
+      </div>
+      <div class="wrapper_no4">
+        <button type="button" class="button_bird">
+          <p class="button_bird__text">投稿する</p>
+            <svg version="1.1" class="feather" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewBox="0 0 75 38" style="enable-background:new 0 0 75 38;" xml:space="preserve">
+              <g>
+                  <path d="M20.8,31.6c3.1-0.7,2.9-2.3,2,1c9.1,4.4,20.4,3.7,29.1-0.8l0,0c0.7-2.1,1-3.9,1-3.9c0.6,0.8,0.8,1.7,1,2.9
+                      c4.1-2.3,7.6-5.3,10.2-8.3c0.4-2.2,0.4-4,0.4-4.1c0.6,0.4,0.9,1.2,1.2,2.1c4.5-6.1,5.4-11.2,3.7-13.5c1.1-2.6,1.6-5.4,1.2-7.7
+                      c-0.5,2.4-1.2,4.7-2.1,7.1c-5.8,11.5-16.9,21.9-30.3,25.3c13-4,23.6-14.4,29.1-25.6C62.8,9,55.6,16.5,44.7,20.7
+                      c2.1,0.7,3.5,1.1,3.5,1.6c-0.1,0.4-1.3,0.6-3.2,0.4c-7-0.9-7.1,1.2-16,1.5c1,1.3,2,2.5,3.1,3.6c-1.9-0.9-3.8-2.2-5.6-3.6
+                      c-0.9,0.1-10.3,4.9-22.6-12.3C5.9,17.7,11.8,26.9,20.8,31.6z"/>
+              </g>
+            </svg>
+          <span class="bird"></span>
+          <span class="bird--1"></span>
+          <span class="bird--2"></span>
+          <span class="bird--3"></span>
+          <span class="bird--4"></span>
+          <span class="bird--5"></span>
+          <span class="bird--6"></span>
+          <span class="bird--7"></span>
+          <span class="bird--8"></span>
+          <span class="bird--9"></span>
+          <span class="bird--10"></span>
+          <span class="bird--11"></span>
+          <span class="bird--12"></span>
+          <span class="bird--13"></span>
+          <span class="bird--14"></span>
+          <span class="bird--15"></span>
+          <span class="bird--16"></span>
+          <span class="bird--17"></span>
+          <span class="bird--18"></span>
+          <span class="bird--19"></span>
+          <span class="bird--20"></span>
+          <span class="bird--21"></span>
+          <span class="bird--22"></span>
+          <span class="bird--23"></span>
+          <span class="bird--24"></span>
+          <span class="bird--25"></span>
+          <span class="bird--26"></span>
+          <span class="bird--27"></span>
+          <span class="bird--28"></span>
+          <span class="bird--29"></span>
+          <span class="bird--30"></span>
+        </button>
+      <div class="return-top" >
+      <a href="/" class="btn btn-top-page">トップページに戻る</a>
+    </div>
+    <%# 話作りの終わり %>
+  <% end %>
+</div>

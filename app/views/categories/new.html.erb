@@ -1,0 +1,14 @@
+<div class="create-page">
+  <div class="user-logo">
+    <%= link_to image_tag("appstory-radius.png", size:'150x150'), "/",  class:"user-show-image"%>
+  </div>
+  <div class="create-main">
+    <h1>カテゴリー登録ページ</h1>
+    <p>genre:  image:</p>
+    <%= form_with model: @category, local: true do |form| %>
+      <%= form.text_field  :genre, id:"category-genre" %>
+      <%= form.file_field :image, id:"category-image" %>
+      <%= form.submit "登録" ,class:"category-btn"%>
+    <% end %>
+  </div>
+</div>
