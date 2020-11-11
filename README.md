@@ -5,8 +5,9 @@
 
 URL:
 
-テスト用アカウント: Email -> sample@sample.com  
-										password -> sample3
+テスト用アカウント: 
+Email -> dog@dog.com  
+password -> wanwan
 
 利用方法: ログインして物語を作り、それを他の人に読んでもらいシェアしたりコメントをもらえる。
 ただ作るだけでは面白くないので、ランダムに表示されるお題をジャンルにそった物語で作ってもらう。
