@@ -5,4 +5,6 @@ class CommentChannel < ApplicationCable::Channel
 
   def unsubscribed
   end
+
+  
 end

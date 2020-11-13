@@ -78,3 +78,5 @@ gem "aws-sdk-s3", require: false
 gem 'carrierwave', '~> 2.1'
 gem 'mini_magick', '~> 4.11'
 gem 'fog-aws', '~> 3.6', '>= 3.6.7'
+
+gem 'redis-rails'
