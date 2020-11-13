@@ -111,7 +111,7 @@ Rails.application.configure do
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 
   config.active_record.cache_versioning = false
-  
-  config.cache_store = :redis_cache_store, 'redis://localhost:6379/0/cache', { expires_in: 90.minutes }
+
+  config.cache_store = :redis_cache_store, 'redis://localhost:3000/0/cache', { expires_in: 90.minutes }
 
 end
