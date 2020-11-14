@@ -112,6 +112,6 @@ Rails.application.configure do
 
   config.active_record.cache_versioning = false
 
-  config.cache_store = :redis_cache_store, 'redis://localhost:3000/0/cache', { expires_in: 90.minutes }
+
 
 end
